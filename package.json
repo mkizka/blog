@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "pull": "gimonfu pull",
+    "push": "gimonfu push"
+  },
+  "dependencies": {
+    "gimonfu": "^0.2.2"
+  }
+}
