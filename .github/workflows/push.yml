@@ -1,0 +1,23 @@
+name: "Push Entries"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push:
+    name: "Push Entries"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: "pnpm"
+      - run: pnpm i
+      - name: "Push Articles"
+        run: echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json && pnpm push
