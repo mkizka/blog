@@ -1,0 +1,10 @@
+#!/bin/sh
+NAME=`cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 16 | head -n 1`
+echo "---
+title: 新規投稿
+categories:
+  - 雑記
+draft: true
+---
+" > ./entry/"$NAME".md
+pnpm push

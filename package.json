@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "new": "./scripts/new",
     "pull": "gimonfu pull",
     "push": "gimonfu push"
   },
