@@ -7,13 +7,16 @@ import rehypeStringify from "rehype-stringify";
 import remarkExtract from "remark-extract-frontmatter";
 import yaml from "yaml";
 
-export function md2html(md: string) {
+import { hatenaCard } from "./remark-hatena-card";
+
+export async function md2html(md: string) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkFrontmatter)
+    .use(hatenaCard)
     .use(remark2rehype)
     .use(rehypeStringify);
-  return processor.processSync(md).value;
+  return (await processor.process(md)).value;
 }
 
 type Frontmatter = {
