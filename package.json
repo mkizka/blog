@@ -5,6 +5,10 @@
     "push": "gimonfu push"
   },
   "dependencies": {
-    "gimonfu": "^0.2.2"
+    "gimonfu": "^0.2.2",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
   }
 }
