@@ -1,27 +1,26 @@
 import { useEffect, useState } from "react";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkFrontmatter from "remark-frontmatter";
-import remark2rehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
 import { useParams } from "react-router-dom";
 
-const processor = unified()
-  .use(remarkParse)
-  .use(remarkFrontmatter)
-  .use(remark2rehype)
-  .use(rehypeStringify);
+import { getEntryImporters, md2html } from "./utils";
+
+const entries = getEntryImporters();
+
+function useEntryId() {
+  const { entryId } = useParams();
+  if (typeof entryId == "string" && entryId in entries) {
+    return entryId;
+  }
+  throw new Error(`entry/${entryId}.mdが存在しません`);
+}
 
 function Entry() {
   const [content, setContent] = useState<string | null>(null);
-  const { entryId } = useParams();
+  const entryId = useEntryId();
 
   useEffect(() => {
-    import(`../entry/${entryId}.md`).then(({ default: entry }) => {
-      const content = processor.processSync(entry);
-      setContent(content.value);
-    });
+    entries[entryId]().then(md2html).then(setContent);
   }, []);
+
   return <div dangerouslySetInnerHTML={{ __html: content! }} />;
 }
 

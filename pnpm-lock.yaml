@@ -9,13 +9,16 @@ specifiers:
   react-dom: ^17.0.2
   react-router-dom: ^6.2.1
   rehype-stringify: ^9.0.2
+  remark-extract-frontmatter: ^3.2.0
   remark-frontmatter: ^4.0.1
   remark-parse: ^10.0.1
   remark-rehype: ^10.1.0
+  remark-stringify: ^10.0.2
   rollup-plugin-string: ^3.0.0
   typescript: ^4.4.4
   unified: ^10.1.1
   vite: ^2.7.2
+  yaml: ^1.10.2
 
 dependencies:
   '@exampledev/new.css': 1.1.3
@@ -23,11 +26,14 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
   rehype-stringify: 9.0.2
+  remark-extract-frontmatter: 3.2.0
   remark-frontmatter: 4.0.1
   remark-parse: 10.0.1
   remark-rehype: 10.1.0
+  remark-stringify: 10.0.2
   rollup-plugin-string: 3.0.0
   unified: 10.1.1
+  yaml: 1.10.2
 
 devDependencies:
   '@types/react': 17.0.38
@@ -794,6 +800,10 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /longest-streak/3.0.1:
+    resolution: {integrity: sha512-cHlYSUpL2s7Fb3394mYxwTYj8niTaNHUCLr0qdiCXQfSjfuA7CKofpX2uSwEfFDQ0EB7JcnMnm+GjbqqoinYYg==}
+    dev: false
+
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -847,6 +857,18 @@ packages:
       unist-util-generated: 2.0.0
       unist-util-position: 4.0.1
       unist-util-visit: 4.1.0
+    dev: false
+
+  /mdast-util-to-markdown/1.2.6:
+    resolution: {integrity: sha512-doJZmTEGagHypWvJ8ltinmwUsT9ZaNgNIQW6Gl7jNdsI1QZkTHTimYW561Niy2s8AEPAqEgV0dIh2UOVlSXUJA==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      '@types/unist': 2.0.6
+      longest-streak: 3.0.1
+      mdast-util-to-string: 3.1.0
+      micromark-util-decode-string: 1.0.2
+      unist-util-visit: 4.1.0
+      zwitch: 2.0.2
     dev: false
 
   /mdast-util-to-string/3.1.0:
@@ -1151,6 +1173,10 @@ packages:
       unified: 10.1.1
     dev: false
 
+  /remark-extract-frontmatter/3.2.0:
+    resolution: {integrity: sha512-PmYwNCo0cMAUV3oAGg5Hn6YSZgiSDwVdxLJmPIZ804aYuvE5mAzozo5AkO0C8ELroWrtN/f9zzb0jqFPBkMnwg==}
+    dev: false
+
   /remark-frontmatter/4.0.1:
     resolution: {integrity: sha512-38fJrB0KnmD3E33a5jZC/5+gGAC2WKNiPw1/fdXJvijBlhA7RCsvJklrYJakS0HedninvaCYW8lQGf9C918GfA==}
     dependencies:
@@ -1176,6 +1202,14 @@ packages:
       '@types/hast': 2.3.4
       '@types/mdast': 3.0.10
       mdast-util-to-hast: 12.1.0
+      unified: 10.1.1
+    dev: false
+
+  /remark-stringify/10.0.2:
+    resolution: {integrity: sha512-6wV3pvbPvHkbNnWB0wdDvVFHOe1hBRAx1Q/5g/EpH4RppAII6J8Gnwe7VbHuXaoKIF6LAg6ExTel/+kNqSQ7lw==}
+    dependencies:
+      '@types/mdast': 3.0.10
+      mdast-util-to-markdown: 1.2.6
       unified: 10.1.1
     dev: false
 
@@ -1395,3 +1429,12 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /yaml/1.10.2:
+    resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
+    engines: {node: '>= 6'}
+    dev: false
+
+  /zwitch/2.0.2:
+    resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
+    dev: false

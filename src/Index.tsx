@@ -1,18 +1,15 @@
 import { Link } from "react-router-dom";
 
-const entryPaths = Object.keys(import.meta.glob("../entry/*.md")) //
-  .map((entryPath) =>
-    entryPath //
-      .replace("..", "")
-      .replace(".md", "")
-  );
+import { getEntryMetas } from "./utils";
+
+const entryMetas = getEntryMetas();
 
 function Index() {
   return (
     <ul>
-      {entryPaths.map((entryPath) => (
-        <li key={entryPath}>
-          <Link to={entryPath}>{entryPath}</Link>
+      {Object.entries(entryMetas).map(([entryId, meta]) => (
+        <li key={entryId}>
+          <Link to={`/entry/${entryId}`}>{meta.title}</Link>
         </li>
       ))}
     </ul>
