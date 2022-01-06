@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getEntryImporters } from "./utils/entries";
+import { entries } from "./utils/entries";
 import { md2html } from "./utils/transformers";
-
-const entries = getEntryImporters();
 
 function useEntryId() {
   const { entryId } = useParams();
@@ -19,7 +17,7 @@ function Entry() {
   const entryId = useEntryId();
 
   useEffect(() => {
-    entries[entryId]().then(md2html).then(setContent);
+    md2html(entries[entryId]).then(setContent);
   }, []);
 
   return <div dangerouslySetInnerHTML={{ __html: content! }} />;

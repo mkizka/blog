@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 
-import { getEntryMetas } from "./utils/entries";
-
-const entryMetas = getEntryMetas();
+import { entries } from "./utils/entries";
+import { md2frontmatter } from "./utils/transformers";
 
 function Index() {
   return (
     <ul>
-      {Object.entries(entryMetas).map(([entryId, meta]) => (
+      {Object.entries(entries).map(([entryId, entry]) => (
         <li key={entryId}>
-          <Link to={`/entry/${entryId}`}>{meta.title}</Link>
+          <Link to={`/entry/${entryId}`}>{md2frontmatter(entry).title}</Link>
         </li>
       ))}
     </ul>
