@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { getEntryMetas } from "./utils";
+import { getEntryMetas } from "./utils/entries";
 
 const entryMetas = getEntryMetas();
 

@@ -13,7 +13,7 @@ function getHatenaParams(text: string) {
   return null;
 }
 
-const hatenaCard: Plugin<any, Element, Element> = () => {
+export const rehypeHatenaCard: Plugin<any, Element, Element> = () => {
   return async (tree) => {
     visit(tree, "element", (node) => {
       node.children = node.children.map((child) => {
@@ -39,5 +39,3 @@ const hatenaCard: Plugin<any, Element, Element> = () => {
     });
   };
 };
-
-export { hatenaCard };

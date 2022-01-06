@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getEntryImporters, md2html } from "./utils";
+import { getEntryImporters } from "./utils/entries";
+import { md2html } from "./utils/transformers";
 
 const entries = getEntryImporters();
 
