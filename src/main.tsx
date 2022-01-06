@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Index } from "./Index";
-import { Entry } from "./Entry";
+import { Index } from "./pages/Index";
+import { Entry } from "./pages/Entry";
 import "@exampledev/new.css";
 
 ReactDOM.render(

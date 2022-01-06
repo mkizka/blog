@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import { entries } from "./utils/entries";
-import { md2frontmatter } from "./utils/transformers";
+import { entries } from "../utils/entries";
+import { md2frontmatter } from "../utils/transformers";
 
 function Index() {
   const pages = Object.entries(entries)
