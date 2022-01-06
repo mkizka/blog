@@ -13,7 +13,7 @@ export async function md2html(md: string) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkFrontmatter)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeHatenaCard)
     .use(rehypeStringify, { allowDangerousHtml: true });
   return (await processor.process(md)).value;
