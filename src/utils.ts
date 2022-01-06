@@ -7,15 +7,15 @@ import rehypeStringify from "rehype-stringify";
 import remarkExtract from "remark-extract-frontmatter";
 import yaml from "yaml";
 
-import { hatenaCard } from "./remark-hatena-card";
+import { hatenaCard } from "./rehype-hatena-card";
 
 export async function md2html(md: string) {
   const processor = unified()
     .use(remarkParse)
     .use(remarkFrontmatter)
-    .use(hatenaCard)
     .use(remark2rehype)
-    .use(rehypeStringify);
+    .use(hatenaCard)
+    .use(rehypeStringify, { allowDangerousHtml: true });
   return (await processor.process(md)).value;
 }
 
