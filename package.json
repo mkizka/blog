@@ -2,35 +2,12 @@
   "name": "vite-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "blogview",
     "push": "gimonfu push",
     "pull": "gimonfu pull"
   },
-  "dependencies": {
-    "@exampledev/new.css": "^1.1.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1",
-    "rehype-stringify": "^9.0.2",
-    "remark-extract-frontmatter": "^3.2.0",
-    "remark-frontmatter": "^4.0.1",
-    "remark-parse": "^10.0.1",
-    "remark-rehype": "^10.1.0",
-    "remark-stringify": "^10.0.2",
-    "rollup-plugin-string": "^3.0.0",
-    "unified": "^10.1.1",
-    "unist-util-visit": "^4.1.0",
-    "yaml": "^1.10.2"
-  },
   "devDependencies": {
-    "@types/hast": "^2.3.4",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@vitejs/plugin-react": "^1.0.7",
-    "gimonfu": "^0.2.2",
-    "typescript": "^4.4.4",
-    "vite": "^2.7.2"
+    "@mkizka/blogview": "^0.0.4",
+    "gimonfu": "^0.2.2"
   }
 }
