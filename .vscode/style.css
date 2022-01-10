@@ -11,3 +11,6 @@ body {
   background-color: #fff;
   line-height: 1.8;
 }
+pre {
+  background-color: #222 !important;
+}
