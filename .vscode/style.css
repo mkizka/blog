@@ -1,16 +1,7 @@
-@font-face {
-  font-family: "VL Pゴシック";
-  font-display: swap;
-  src: url("https://cdn.leafscape.be/VLGothic/VL-PGothic-Regular_web.woff2")
-    format("woff2");
-}
-html,
-body {
-  font-family: "VL Pゴシック", sans-serif;
-  color: #454545;
-  background-color: #fff;
-  line-height: 1.8;
-}
+/* https://newcss.net/usage/ */
+@import url("https://fonts.xz.style/serve/inter.css");
+@import url("https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css");
 pre {
+  color: white;
   background-color: #222 !important;
 }
