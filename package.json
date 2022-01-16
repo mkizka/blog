@@ -7,7 +7,7 @@
     "pull": "gimonfu pull"
   },
   "devDependencies": {
-    "@mkizka/blogview": "^0.1.0",
+    "blogview": "^1.0.0",
     "gimonfu": "^0.2.2"
   }
 }
