@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "blogview",
+    "new": "./scripts/new",
     "push": "gimonfu push",
     "pull": "gimonfu pull"
   },
