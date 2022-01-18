@@ -1,15 +1,15 @@
 ---
-title: はてなブログをZennみたいにGitHubから投稿できるようにする
+title: はてなブログの記事をプレビューするVSCode拡張機能を作った
 date: 2021-12-31T13:07:01.000Z
 categories:
   - 作ったもの
 id: "13574176438048123050"
-draft: true
+draft: false
 ---
 
 Zenn の GitHub 連携で投稿する方法が好きなので、はてなブログも同じように投稿したいところです。
 
-今回は Zenn のように GitHub からはてなブログの記事を投稿できるように整備してみたので、やったことを紹介します。
+今回は Zenn のように Markdown ファイルを VSCode で編集して、 GitHub からはてなブログの記事を投稿できるように整備してみたので、やったことを紹介します。
 
 <!-- more -->
 
@@ -25,9 +25,8 @@ Zenn の GitHub 連携で投稿する方法が好きなので、はてなブロ�
 
 投稿にはすでに blogsync、gimonfu などのツールがあるようです。
 
-https://github.com/x-motemen/blogsync
-
-https://github.com/yammerjp/gimonfu
+- https://github.com/x-motemen/blogsync
+- https://github.com/yammerjp/gimonfu
 
 しかし、編集した投稿のプレビュー方法は無いようです。はてなブログ公式のプレビューは編集画面から起動する前提のようで、公式の編集画面と VSCode などのエディタを同時に起動するのも微妙です。
 
@@ -63,7 +62,7 @@ VSCode の Markdown プレビューは Markdown-it のプラグインで拡張�
 
 [https://marketplace.visualstudio.com/items?itemName=mkizka.blogview-vscode:embed]
 
-記事執筆時点では`:contents`と`:embed`に対応しています。これ以外のはてな記法をほとんど使っていないので、これが欲しいというものがあれば Issue/PR お待ちしています。
+記事執筆時点では`:contents`、`:embed`、`:cite`に対応しています。これ以外のはてな記法をほとんど使っていないので、これが欲しいというものがあれば Issue/PR お待ちしています。
 
 ### プレビューに iframe 要素を表示する
 
@@ -87,9 +86,15 @@ VSCode の Markdown プレビューは Markdown-it のプラグインで拡張�
 使い方は、`entry`ディレクトリに Markdown ファイルを配置した状態で、`blogview`コマンドを実行するだけです。
 
 ```shell
-$ npm i -g @mkizka/blogview
+$ npm i -g blogview
 $ blogview
 プレビュー: http://localhost:8000
 ```
 
-gimonfu と組み合わせて使うことを想定しています。
+gimonfu と組み合わせて使うことを想定しています。詳しい使い方は README を見て下さい。
+
+## おわり
+
+blogview は今後も自分で使いながら少しずつ調整していく予定です。
+
+ぜひ使ってみて下さい。
