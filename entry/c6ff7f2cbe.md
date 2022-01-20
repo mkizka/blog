@@ -6,6 +6,7 @@ categories:
 id: "13574176438048123050"
 draft: false
 ---
+
 Zenn ( https://zenn.dev )の GitHub 連携で投稿する方法が好きなので、はてなブログも同じように投稿したいところです。
 
 今回は Zenn のように Markdown ファイルを VSCode で編集して、 GitHub からはてなブログの記事を投稿できるように整備してみたので、やったことを紹介します。
@@ -93,6 +94,36 @@ $ blogview
 ```
 
 gimonfu と組み合わせて使うことを想定しています。詳しい使い方は README を見て下さい。
+
+## GitHub Actions ではてなブログ記事を自動投稿するようにした
+
+GitHub の Secrets に`GIMONFU_JSON`として.gimonfu.json のファイルの内容を設定し、投稿時にファイルとして出力するようにしています。
+
+```yml
+name: "Push Entries"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push:
+    name: "Push Entries"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: "pnpm"
+      - run: pnpm i
+      - name: "Push Articles"
+        run: echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json && pnpm push
+```
 
 ## おわり
 
