@@ -9,7 +9,7 @@ draft: false
 
 Zenn ( https://zenn.dev )の GitHub 連携で投稿する方法が好きなので、はてなブログも同じように投稿したいところです。
 
-今回は Zenn のように Markdown ファイルを VSCode で編集して、 GitHub からはてなブログの記事を投稿できるように整備してみたので、やったことを紹介します。
+今回はブログ記事を VSCode で編集して、 GitHub から投稿できるように整備してみたので、やったことを紹介します。
 
 [f:id:mkizka:20220118161117p:plain]
 
@@ -66,6 +66,8 @@ VSCode の Markdown プレビューは Markdown-it のプラグインで拡張�
 
 記事執筆時点では`:contents`、`:embed`、`:cite`に対応しています。これ以外のはてな記法をほとんど使っていないので、これが欲しいというものがあれば Issue/PR お待ちしています。
 
+Markdown-it のプラグインの作り方は Zenn で[記事](https://zenn.dev/mkizka/articles/9d4954d83b8862)を書きました。
+
 ### プレビューに iframe 要素を表示する
 
 `:embed`で変換したカードは`iframe`として描画されていますが、VSCode のデフォルト設定ではセキュリティ対策として`iframe`要素が非表示になっています。
@@ -99,7 +101,7 @@ gimonfu と組み合わせて使うことを想定しています。詳しい使
 
 GitHub の Secrets に`GIMONFU_JSON`として.gimonfu.json のファイルの内容を設定し、投稿時にファイルとして出力するようにしています。
 
-```yml
+```yaml
 name: "Push Entries"
 
 on:
