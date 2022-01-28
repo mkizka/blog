@@ -1,6 +1,7 @@
 {
-  "name": "vite-project",
+  "name": "blog-mkizka-dev",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "blogview",
     "new": "./scripts/new",
@@ -8,7 +9,7 @@
     "pull": "gimonfu pull"
   },
   "devDependencies": {
-    "blogview": "^1.0.0",
+    "blogview": "^1.3.2",
     "gimonfu": "^0.2.2"
   }
 }
