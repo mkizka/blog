@@ -5,15 +5,13 @@
   "scripts": {
     "dev": "blogview",
     "new": "./scripts/new",
-    "push": "gimonfu push",
-    "pull": "gimonfu pull",
+    "push": "gimonfu push && pnpm format",
+    "pull": "gimonfu pull && pnpm format",
     "format": "prettier . -w"
   },
-  "devDependencies": {
-    "blogview": "^1.4.2",
-    "gimonfu": "^0.2.2"
-  },
   "dependencies": {
+    "blogview": "^1.4.2",
+    "gimonfu": "^0.2.2",
     "prettier": "^2.6.1"
   },
   "packageManager": "pnpm@6.29.1"
