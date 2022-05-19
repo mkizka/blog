@@ -1,3 +1,5 @@
 {
-  "markdown.styles": [".vscode/style.css"]
+  "markdown.styles": [".vscode/style.css"],
+  "MarkdownPaste.path": "${workspaceRoot}/images",
+  "MarkdownPaste.silence": true
 }

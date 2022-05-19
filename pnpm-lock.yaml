@@ -3,11 +3,13 @@ lockfileVersion: 5.3
 specifiers:
   blogview: ^1.4.2
   gimonfu: ^0.2.2
+  husky: ^8.0.1
   prettier: ^2.6.1
 
 dependencies:
   blogview: 1.4.2
   gimonfu: 0.2.2
+  husky: 8.0.1
   prettier: 2.6.1
 
 packages:
@@ -449,6 +451,12 @@ packages:
       assert-plus: 1.0.0
       jsprim: 1.4.2
       sshpk: 1.17.0
+    dev: false
+
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: false
 
   /iconv-lite/0.4.24:
