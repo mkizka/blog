@@ -10,8 +10,7 @@
   "dependencies": {
     "blogview": "^1.4.2",
     "gimonfu": "^0.2.2",
-    "prettier": "^2.6.1",
-    "zenn-cli": "^0.1.110"
+    "prettier": "^2.6.1"
   },
   "packageManager": "pnpm@6.29.1"
 }
