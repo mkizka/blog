@@ -7,4 +7,5 @@ categories:
 draft: true
 ---
 " > ./entry/"$NAME".md
-pnpm push
+pnpm gimonfu push
+pnpm format

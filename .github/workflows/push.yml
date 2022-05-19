@@ -20,4 +20,4 @@ jobs:
           cache: "pnpm"
       - run: pnpm i
       - name: "Push Articles"
-        run: echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json && pnpm push
+        run: echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json && ./scripts/deploy

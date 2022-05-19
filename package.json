@@ -5,21 +5,13 @@
   "scripts": {
     "dev": "blogview",
     "new": "./scripts/new",
-    "convert": "./scripts/convert",
-    "push": "gimonfu push && pnpm format",
-    "pull": "gimonfu pull && pnpm format",
     "format": "prettier . -w"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "convert"
-    }
   },
   "dependencies": {
     "blogview": "^1.4.2",
     "gimonfu": "^0.2.2",
-    "husky": "^8.0.1",
-    "prettier": "^2.6.1"
+    "prettier": "^2.6.1",
+    "zenn-cli": "^0.1.110"
   },
   "packageManager": "pnpm@6.29.1"
 }

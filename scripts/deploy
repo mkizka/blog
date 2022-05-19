@@ -3,3 +3,4 @@ set -e
 find entry -name "*.md" \
  | tr ' ' '\n' \
  | xargs -i sed -i -e 's/\!\[\](\.\.\//![](https:\/\/mkizka.github.io\/blog\//' {}
+pnpm gimonfu push
