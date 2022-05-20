@@ -19,7 +19,7 @@ draft: false
 
 コードは記事執筆時点で以下の通りです。ライブラリ読み込みなどは省略。
 
-```js
+```javascript
 const jsonText = document.querySelectorAll(
   'head script[type="application/ld+json"]'
 )[0].innerText;
