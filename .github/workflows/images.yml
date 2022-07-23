@@ -14,3 +14,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./images
           keep_files: true
+          cname: pages.mkizka.dev
