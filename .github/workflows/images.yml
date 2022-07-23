@@ -6,14 +6,13 @@ on:
       - main
 
 jobs:
-  push:
+  images:
     runs-on: ubuntu-latest
     steps:
-      - name: 公開フォルダに画像をコピー
-        run: |
-          mkdir publish
-          cp images/* publish/
+      - uses: actions/checkout@v2
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: images
+          keep_files: true
           cname: pages.mkizka.dev
