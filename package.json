@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "blogview",
     "new": "./scripts/new",
-    "format": "prettier . -w",
-    "push": "gimonfu push && pnpm format"
+    "replace-images": "./scripts/replace-images",
+    "format": "prettier . -w"
   },
   "dependencies": {
     "blogview": "^1.4.2",

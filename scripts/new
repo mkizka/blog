@@ -7,4 +7,3 @@ categories:
 draft: true
 ---
 " > ./entry/"$NAME".md
-pnpm push

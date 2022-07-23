@@ -1,4 +1,4 @@
-name: "Push Entries"
+name: 記事を更新
 
 on:
   push:
@@ -7,17 +7,22 @@ on:
 
 jobs:
   push:
-    name: "Push Entries"
+    name: 記事を更新
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6
+      - uses: pnpm/action-setup@v2.2.2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-          cache: "pnpm"
+          cache: pnpm
       - run: pnpm i
-      - name: "Push Articles"
-        run: echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json && ./scripts/deploy
+      - name: 記事を更新
+        run: |
+          echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json
+          pnpm replace-images
+          pnpm gimonfu push
+          pnpm format
+      - uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

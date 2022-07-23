@@ -1,6 +1,0 @@
-#!/bin/sh
-set -e
-find entry -name "*.md" \
- | tr ' ' '\n' \
- | xargs -i sed -i -e 's/\!\[\](\.\.\//![](https:\/\/pages.mkizka.dev\//' {}
-pnpm push
