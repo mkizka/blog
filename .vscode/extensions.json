@@ -1,3 +1,6 @@
 {
-  "recommendations": ["mkizka.blogview-vscode"]
+  "recommendations": [
+    "mkizka.blogview-vscode",
+    "telesoho.vscode-markdown-paste-image"
+  ]
 }
