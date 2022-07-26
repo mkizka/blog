@@ -34,9 +34,25 @@ function createCommitLink() {
   return a;
 }
 
+/**
+ * @param {HTMLElement} img
+ */
+function replaceImages(img) {
+  const imgParent = img.parentElement;
+  const a = document.createElement("a");
+  a.href = img.src;
+  a.target = "_blank";
+  a.appendChild(img);
+  imgParent.appendChild(a);
+}
+
 window.addEventListener("load", () => {
   const categories = document.querySelector(".entry-categories");
   if (categories) {
     categories.appendChild(createCommitLink());
+  }
+  const entryContent = document.querySelector(".entry-content");
+  if (entryContent) {
+    entryContent.querySelectorAll("img").forEach(replaceImages);
   }
 });
