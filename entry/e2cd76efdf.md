@@ -11,7 +11,7 @@ draft: false
 
 <!-- more -->
 
-![](https://pages.mkizka.dev/20220520015249.png)
+![](https://pages.mkizka.dev/images/20220520015249.png)
 
 2021 年 9 月に書いた上記記事の場合は、この記事を書いている 2022 年 5 月に更新されたことが一目で分かるようになっています。
 
