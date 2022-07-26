@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "blogview",
+    "serve": "serve public --cors",
     "new": "./scripts/new",
     "replace-images": "./scripts/replace-images",
     "format": "prettier . -w"
@@ -11,7 +12,8 @@
   "dependencies": {
     "blogview": "^1.4.2",
     "gimonfu": "^0.2.2",
-    "prettier": "^2.6.1"
+    "prettier": "^2.6.1",
+    "serve": "^14.0.1"
   },
   "packageManager": "pnpm@7.6.0"
 }

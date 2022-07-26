@@ -1,0 +1,35 @@
+/* ブログタイトル */
+#blog-title {
+  margin: 48px 0;
+}
+/* カテゴリ説明文 */
+.archive-description {
+  margin-left: 24px;
+}
+/* スマホ表示のサイドバー上 */
+#content-inner #box2-inner {
+  padding-top: 20px;
+}
+/* プロフィールの説明文 */
+.profile-description p {
+  text-align: center !important;
+}
+/* TOCにmarginを付与 */
+.entry .entry-inner .entry-content .table-of-contents li > ul {
+  margin: initial;
+  margin-inline-start: 1.5rem;
+}
+/* 記事末尾のmargin調整 */
+.entry .entry-inner .entry-footer {
+  margin: 0;
+}
+/* リンクのアイテムに間隔を空ける */
+.hatena-module-links .hatena-urllist li {
+  margin-bottom: 16px;
+}
+/* 記事タイトル下のコミットリンクの位置調整 */
+#commits-link {
+  position: absolute;
+  margin-left: 8px;
+  background: initial;
+}
