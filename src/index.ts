@@ -5,31 +5,42 @@ import "dayjs/locale/ja";
 dayjs.locale("ja");
 dayjs.extend(relativeTime);
 
-function createCommitLink() {
-  const jsonText = document.querySelectorAll(
-    'head script[type="application/ld+json"]'
-  )[0].textContent!;
-  const { datePublished, dateModified } = JSON.parse(jsonText);
-
-  const label = dayjs(dateModified).isSame(datePublished, "day")
-    ? "commits"
-    : `commits (${dayjs(dateModified).fromNow()}に更新)`;
-
+function createAnchor() {
   const a = document.createElement("a");
   a.id = "commits-link";
   a.classList.add("entry-category-link");
   a.rel = "nofollow";
   a.href = `https://github.com/mkizka/blog/commits/main${location.pathname}.md`;
+  return a;
+}
 
+function createImage(label: string) {
   const img = document.createElement("img");
-  const src = new URL("https://img.shields.io");
-  src.pathname = `/badge/${encodeURIComponent(label)}-black`;
-  src.searchParams.set("logo", "github");
-  src.searchParams.set("labelColor", "black");
-  src.searchParams.set("color", "ddd");
-  src.searchParams.set("style", "flat-square");
-  img.src = src.toString();
+  const url = new URL("https://img.shields.io");
+  url.pathname = `/badge/${encodeURIComponent(label)}-black`;
+  url.searchParams.set("logo", "github");
+  url.searchParams.set("labelColor", "black");
+  url.searchParams.set("color", "ddd");
+  url.searchParams.set("style", "flat-square");
+  img.src = url.toString();
+  return img;
+}
 
+interface LdJSON {
+  datePublished?: string;
+  dateModified?: string;
+}
+
+function createCommitLink() {
+  const ldJSONElement = document.querySelector('[type="application/ld+json"]');
+  const ldJSON: LdJSON = JSON.parse(ldJSONElement!.textContent!);
+
+  const label = dayjs(ldJSON.dateModified).isSame(ldJSON.datePublished, "day")
+    ? "commits"
+    : `commits (${dayjs(ldJSON.dateModified).fromNow()}に更新)`;
+
+  const a = createAnchor();
+  const img = createImage(label);
   a.appendChild(img);
   return a;
 }
