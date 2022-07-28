@@ -1,14 +1,14 @@
-import dayjs from "https://cdn.skypack.dev/dayjs";
-import ja from "https://cdn.skypack.dev/dayjs/locale/ja";
-import relativeTime from "https://cdn.skypack.dev/dayjs/plugin/relativeTime";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/ja";
 
-dayjs.locale(ja);
+dayjs.locale("ja");
 dayjs.extend(relativeTime);
 
 function createCommitLink() {
   const jsonText = document.querySelectorAll(
     'head script[type="application/ld+json"]'
-  )[0].innerText;
+  )[0].textContent!;
   const { datePublished, dateModified } = JSON.parse(jsonText);
 
   const label = dayjs(dateModified).isSame(datePublished, "day")
@@ -28,17 +28,14 @@ function createCommitLink() {
   src.searchParams.set("labelColor", "black");
   src.searchParams.set("color", "ddd");
   src.searchParams.set("style", "flat-square");
-  img.src = src;
+  img.src = src.toString();
 
   a.appendChild(img);
   return a;
 }
 
-/**
- * @param {HTMLElement} img
- */
-function replaceImages(img) {
-  const imgParent = img.parentElement;
+function replaceImages(img: HTMLImageElement) {
+  const imgParent = img.parentElement!;
   const a = document.createElement("a");
   a.href = img.src;
   a.target = "_blank";
