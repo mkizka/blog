@@ -1,10 +1,4 @@
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-import "dayjs/locale/ja";
 import "./index.css";
-
-dayjs.locale("ja");
-dayjs.extend(relativeTime);
 
 function createAnchor() {
   const a = document.createElement("a");
@@ -27,18 +21,29 @@ function createImage(label: string) {
   return img;
 }
 
+function fromNow(date: string) {
+  let diff = Math.ceil(
+    (new Date().getTime() - new Date(date).getTime()) / 1000
+  );
+  if (diff <= 60) return `${diff}秒前`;
+  diff = Math.ceil(diff / 60);
+  if (diff <= 60) return `${diff}分前`;
+  diff = Math.ceil(diff / 60);
+  if (diff <= 24) return `${diff}時間前`;
+  diff = Math.ceil(diff / 24);
+  return `${diff}日前`;
+}
+
 interface LdJSON {
-  datePublished?: string;
-  dateModified?: string;
+  datePublished: string;
+  dateModified: string;
 }
 
 function createCommitLink() {
   const ldJSONElement = document.querySelector('[type="application/ld+json"]');
   const ldJSON: LdJSON = JSON.parse(ldJSONElement!.textContent!);
 
-  const label = dayjs(ldJSON.dateModified).isSame(ldJSON.datePublished, "day")
-    ? "commits"
-    : `commits (${dayjs(ldJSON.dateModified).fromNow()}に更新)`;
+  const label = `commits (${fromNow(ldJSON.dateModified)}に更新)`;
 
   const a = createAnchor();
   const img = createImage(label);
