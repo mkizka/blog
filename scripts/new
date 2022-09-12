@@ -5,4 +5,7 @@ title: 新規投稿
 categories:
   - 雑記
 draft: true
----" > ./entry/"$NAME".md
+---
+
+<!-- more -->
+" > ./entry/"$NAME".md
