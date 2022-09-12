@@ -31,7 +31,7 @@ function fromNow(date: string) {
   diff = Math.ceil(diff / 60);
   if (diff <= 24) return `${diff}時間前`;
   diff = Math.ceil(diff / 24);
-  return `${diff}日前`;
+  return diff >= 30 ? "30日以上前" : `${diff}日前`;
 }
 
 interface LdJSON {
