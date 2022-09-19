@@ -20,7 +20,7 @@ jobs:
         run: |
           echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json
           pnpm replace-images
-          pnpm gimonfu push
+          pnpm gimonfu push --allow-delete
           pnpm format
       - uses: actions-js/push@master
         with:
