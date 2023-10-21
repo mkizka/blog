@@ -21,7 +21,7 @@ function createImage(label: string) {
 
 function fromNow(date: string) {
   let diff = Math.ceil(
-    (new Date().getTime() - new Date(date).getTime()) / 1000
+    (new Date().getTime() - new Date(date).getTime()) / 1000,
   );
   if (diff <= 60) return `${diff}秒前`;
   diff = Math.ceil(diff / 60);

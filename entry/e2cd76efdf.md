@@ -21,7 +21,7 @@ draft: false
 
 ```javascript
 const jsonText = document.querySelectorAll(
-  'head script[type="application/ld+json"]'
+  'head script[type="application/ld+json"]',
 )[0].innerText;
 const { datePublished, dateModified } = JSON.parse(jsonText);
 

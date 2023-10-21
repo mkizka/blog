@@ -1,6 +1,6 @@
 function isCategory(category: string) {
   return [...document.querySelectorAll(".entry-category-link")].some(
-    (n) => n.textContent == category
+    (n) => n.textContent == category,
   );
 }
 
