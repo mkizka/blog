@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "blogview": "^1.4.2",
-    "esbuild": "^0.14.50",
-    "gimonfu": "^0.2.2",
+    "esbuild": "^0.19.5",
+    "gimonfu": "^0.3.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.6.1",
-    "serve": "^14.0.1",
-    "typescript": "^4.8.3"
+    "prettier": "^3.0.3",
+    "serve": "^14.2.1",
+    "typescript": "^5.2.2"
   },
   "packageManager": "pnpm@7.6.0"
 }
