@@ -1,5 +1,5 @@
 {
-  "name": "blog-mkizka-dev",
+  "name": "mkizka-dev",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -22,5 +22,5 @@
     "serve": "^14.2.1",
     "typescript": "^5.2.2"
   },
-  "packageManager": "pnpm@7.6.0"
+  "packageManager": "pnpm@8.13.1"
 }
