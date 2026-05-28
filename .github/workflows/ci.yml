@@ -1,4 +1,4 @@
-name: 記事を更新
+name: CI
 
 on:
   push:
