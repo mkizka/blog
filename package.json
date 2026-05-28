@@ -14,13 +14,13 @@
     "format": "prettier . -w"
   },
   "dependencies": {
-    "blogview": "^1.4.2",
-    "esbuild": "^0.19.5",
-    "gimonfu": "^0.3.2",
+    "blogview": "^1.4.3",
+    "esbuild": "^0.28.0",
+    "gimonfu": "^0.4.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.3",
-    "serve": "^14.2.1",
-    "typescript": "^5.2.2"
+    "prettier": "^3.8.3",
+    "serve": "^14.2.6",
+    "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@8.13.1"
+  "packageManager": "pnpm@11.3.0"
 }
