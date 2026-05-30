@@ -1,6 +1,7 @@
 function createAnchor(text: string) {
   const a = document.createElement("a");
   a.classList.add("entry-category-link");
+  a.target = "_blank";
   a.rel = "nofollow";
   a.href = `https://github.com/mkizka/blog/commits/main${location.pathname}.md`;
   a.textContent = text;
