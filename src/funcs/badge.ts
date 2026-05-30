@@ -1,21 +1,20 @@
-function createAnchor() {
+function createAnchor(text: string) {
   const a = document.createElement("a");
-  a.id = "commits-link";
   a.classList.add("entry-category-link");
   a.rel = "nofollow";
   a.href = `https://github.com/mkizka/blog/commits/main${location.pathname}.md`;
+  a.textContent = text;
   return a;
 }
 
-function createImage(label: string) {
+function createImage() {
   const img = document.createElement("img");
-  const url = new URL("https://img.shields.io");
-  url.pathname = `/badge/${encodeURIComponent(label)}-black`;
-  url.searchParams.set("logo", "github");
-  url.searchParams.set("labelColor", "black");
-  url.searchParams.set("color", "ddd");
-  url.searchParams.set("style", "flat-square");
-  img.src = url.toString();
+  img.src = "https://cdn.simpleicons.org/github";
+  img.width = 16;
+  img.height = 16;
+  img.style.verticalAlign = "middle";
+  img.style.marginLeft = "4px";
+  img.style.marginBottom = "2px";
   return img;
 }
 
@@ -41,11 +40,11 @@ function createCommitLink() {
   const ldJSONElement = document.querySelector('[type="application/ld+json"]');
   const ldJSON: LdJSON = JSON.parse(ldJSONElement!.textContent!);
 
-  const label = `commits (${fromNow(ldJSON.dateModified)}に更新)`;
+  const label = `${fromNow(ldJSON.dateModified)}に更新`;
 
-  const a = createAnchor();
-  const img = createImage(label);
-  a.appendChild(img);
+  const a = createAnchor(label);
+  const image = createImage();
+  a.appendChild(image);
   return a;
 }
 
