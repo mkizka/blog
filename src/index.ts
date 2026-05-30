@@ -5,7 +5,7 @@ import { noindex } from "./funcs/noindex";
 // @ts-expect-error
 import "./index.css";
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   badge();
   image();
 });
