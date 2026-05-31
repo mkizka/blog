@@ -10,7 +10,6 @@
     "build": "esbuild --bundle --minify --outdir=public/assets src/index.ts",
     "blogview": "blogview",
     "new": "./scripts/new",
-    "replace-images": "./scripts/replace-images",
     "format": "prettier . -w"
   },
   "dependencies": {

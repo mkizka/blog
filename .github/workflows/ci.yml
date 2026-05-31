@@ -15,9 +15,9 @@ jobs:
       - name: 記事を更新
         run: |
           echo '${{ secrets.GIMONFU_JSON }}' > .gimonfu.json
-          pnpm replace-images
+          ./scripts/replace-images
           pnpm gimonfu push --allow-delete
-          pnpm format
+      - run: pnpm format
       - uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # v1.5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
